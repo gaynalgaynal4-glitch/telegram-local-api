@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: telegram-local-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: TELEGRAM_API_ID
+        sync: false
+      - key: TELEGRAM_API_HASH
+        sync: false
+      - key: CLEANUP_TOKEN
+        generateValue: true
+      - key: MAX_REQUEST_MB
+        value: "210"
